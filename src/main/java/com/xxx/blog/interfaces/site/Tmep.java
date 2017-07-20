@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/1/11
  */
 //@RestController

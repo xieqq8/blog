@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/12/27
  */
 public class GitBookDto {

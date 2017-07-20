@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/9/27
  */
 @ControllerAdvice(basePackages = {"com.xxx.blog.interfaces.manage","com.xxx.blog.interfaces.site"})

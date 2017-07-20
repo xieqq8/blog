@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/1/7
  */
 @Component

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/12/28
  */
 public class GitBookCurrentIndex {

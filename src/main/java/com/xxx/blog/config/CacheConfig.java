@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 后台应用，不考虑集群需求，使用guava作为cache
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/10/31
  */
 @Configuration

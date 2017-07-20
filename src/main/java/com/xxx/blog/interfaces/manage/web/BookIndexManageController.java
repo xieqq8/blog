@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/9/18
  */
 @RestController

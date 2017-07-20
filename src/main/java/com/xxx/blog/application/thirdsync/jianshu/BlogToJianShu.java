@@ -24,7 +24,7 @@ import java.util.Random;
 
 /**
  * 同步博客到简书
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/4/1
  */
 @Component

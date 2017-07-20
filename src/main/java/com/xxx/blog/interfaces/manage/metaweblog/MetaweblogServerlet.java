@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/3/31
  */
 @Component

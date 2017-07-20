@@ -11,7 +11,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/1/10
  */
 @Configuration

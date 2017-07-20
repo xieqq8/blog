@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 自定义请求处理器工厂以支持spring
- * @author qiang.xie
+ * @author xiexx
  * @date 2017/3/31
  */
 @Component

@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Date;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/12/27
  */
 public class  BlogDetailDto {

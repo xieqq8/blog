@@ -3,7 +3,7 @@ package com.xxx.blog.interfaces.shard;
 import java.util.Date;
 
 /**
- * @author qiang.xie
+ * @author xiexx
  * @date 2016/12/26
  */
 public class BookDto {
