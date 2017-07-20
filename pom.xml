@@ -260,6 +260,12 @@
 			<artifactId>transport</artifactId>
 			<version>5.5.0</version>
 		</dependency>
+		<!--Thymeleaf 要解析 严格XML格式的文档 spring.thymeleaf.mode=LEGACYHTML5-->
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+			<version>1.9.22</version>
+		</dependency>
 
 
 	</dependencies>
