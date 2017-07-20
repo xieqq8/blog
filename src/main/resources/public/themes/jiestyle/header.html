@@ -1,0 +1,34 @@
+<header id="header">
+    <div style="margin-top: 15px"><a href="/"><img th:src="@{${siteconfig[logo]}?:'/themes/jiestyle/images/logo.png'}"/></a></div>
+    <span id="name" style="display: none" th:text="${siteconfig.name}?:'@xiexx博客'"></span>
+    <div class="nav">
+        <ul>
+
+            <li th:if="${not #lists.isEmpty(navs)}" th:each="nav:${navs}">
+                <a th:href="@{${nav.url}?:'#'}" th:text="${nav.label}" th:target="${nav.type==2}?'_blank'">label</a>
+
+                <ul>
+                    <li th:each="second:${nav.childNodes}"><a th:href="@{${second.url}}" th:text="${second.label}"
+                                                              th:target="${second.type==2}?'_blank'">label</a></li>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+    <br/>
+    <aside class="widget clearfix" style="padding: 10px;">
+        <form id="searchform" action="/search" method="get">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="搜索…" required="required" name="s">
+                <span class="input-group-btn">
+      <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </span></div>
+        </form>
+    </aside>
+
+        <div style="margin-top: 80px;margin-bottom: 20px;text-align: center">
+            <img th:src="@{/themes/jiestyle/images/weixin.jpg}" alt="xiexx微信" width="80%"/>
+        </div>
+
+</header>

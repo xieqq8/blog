@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title th:text="${book.name}+'-'+${siteconfig.name}?:'xiexx博客'"></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description"
+          th:content="${siteconfig.description}?:'xiexx博客'"/>
+    <meta name="keywords" th:content="${siteconfig.keywords}?:'xiexx博客'"/>
+    <meta name="generator" content="GitBook 3.2.2"/>
+    <link rel="stylesheet" th:href="@{/themes/jiestyle/style.css}"/>
+    <link rel="stylesheet" th:href="@{/gitbook/style.css}"/>
+
+    <link rel="stylesheet" th:href="@{/gitbook/gitbook-plugin-fontsettings/website.css}"/>
+
+
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152"
+          th:href="@{/gitbook/images/apple-touch-icon-precomposed-152.png}"/>
+    <!--<link rel="shortcut icon" th:href="@{/gitbook/images/favicon.ico}" type="image/x-icon"/>-->
+    <link rel="stylesheet" th:href="@{/themes/jiestyle/css/editormd.preview.min.css}"/>
+    <link rel="prev" th:if="${currentIndex.prev!=null}" th:href="@{${currentIndex.prev.url}}"/>
+
+
+    <link rel="next" th:if="${currentIndex.next!=null}" th:href="@{${currentIndex.next.url}}"/>
+
+</head>
+<body>
+
+<div class="book">
+    <div class="book-summary">
+
+
+        <nav role="navigation">
+
+
+            <ul class="summary">
+                <li>
+                    <div><a href="/"><img th:src="@{${siteconfig[logo]}?:'/themes/jiestyle/images/logo.png'}"/></a></div>
+                </li>
+                <li class="divider"></li>
+                <li><h3 style="padding: 10px;" th:text="${book.name}"></h3></li>
+                <li class="divider"></li>
+                <li th:if="${not #lists.isEmpty(book.indexs)}" th:each="nav:${book.indexs}">
+                    <a th:href="@{${nav.url}?:'#'}" th:text="${nav.label}" th:target="${nav.type==2}?'_blank'">label</a>
+
+                    <ul>
+                        <li
+                                th:each="second:${nav.childNodes}">
+                            <a th:href="@{${second.url}}" th:text="${second.label}"
+                                                                  th:target="${second.type==2}?'_blank'">label</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="divider"></li>
+
+
+                <li th:if="${not #lists.isEmpty(navs)}" th:each="nav:${navs}">
+                    <a th:href="@{${nav.url}?:'#'}" th:text="${nav.label}" th:target="${nav.type==2}?'_blank'">label</a>
+
+                    <ul>
+                        <li th:each="second:${nav.childNodes}"><a th:href="@{${second.url}}" th:text="${second.label}"
+                                                                  th:target="${second.type==2}?'_blank'">label</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+
+    <div class="book-body">
+
+        <div class="body-inner">
+
+
+
+            <div class="book-header" role="navigation">
+
+
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    <a th:href="@{${blog.link}}" th:text="${blog.title}">第一节</a>
+                </h1>
+            </div>
+
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+
+                    <section class="normal markdown-section">
+                        <h1 th:utext="${blog.secondTitle}">第二节</h1>
+                        <div class="view-meta">
+                            <span>作者: @xiexx    </span>
+                            <span>微信公众号:Java技术    </span>
+                            <span>阅读数: <span th:text="${blog.views}">    </span></span>
+            <span>分类: <a th:href="@{/blog/catalog/{catalog}(catalog=${blog.catalog})}" rel="category tag"
+                         th:text="${blog.catalogDisplay}">catalog</a></span>
+
+                        </div>
+                    <div class="view-content">
+                        <div class="editormd-preview">
+                            <div th:utext="${blog.display}" class="markdown-body editormd-preview-container"
+                                 previewcontainer="true"
+                                 style="padding: 20px;font-size: 16px;line-height: 30px;">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                        <br/> <br/>
+                        <!-- 代码1：放在页面需要展示的位置  -->
+                        <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+                        <div style="text-align: center" id="cyReward" role="cylabs" data-use="reward"></div>
+                                          <br/> <br/>
+
+                        <div id="SOHUCS" th:sid="${blog.id}"></div>
+                        <script type="text/javascript">
+                            (function () {
+                                var appid = 'cysLQndbF';
+                                var conf = 'prod_3079dbdfcaec407dfdfa5ba2341d5cba';
+                                var width = window.innerWidth || document.documentElement.clientWidth;
+                                if (width < 960) {
+                                    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+                                } else {
+                                    var loadJs = function (d, a) {
+                                        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                                        var b = document.createElement("script");
+                                        b.setAttribute("type", "text/javascript");
+                                        b.setAttribute("charset", "UTF-8");
+                                        b.setAttribute("src", d);
+                                        if (typeof a === "function") {
+                                            if (window.attachEvent) {
+                                                b.onreadystatechange = function () {
+                                                    var e = b.readyState;
+                                                    if (e === "loaded" || e === "complete") {
+                                                        b.onreadystatechange = null;
+                                                        a()
+                                                    }
+                                                }
+                                            } else {
+                                                b.onload = a
+                                            }
+                                        }
+                                        c.appendChild(b)
+                                    };
+                                    loadJs("http://changyan.sohu.com/upload/changyan.js", function () {
+                                        window.changyan.api.config({appid: appid, conf: conf})
+                                    });
+                                }
+                            })(); </script>
+
+                        <script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/lib/jquery.js"></script>
+                        <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysLQndbF"></script>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <a th:if="${currentIndex.prev!=null}" th:href="@{${currentIndex.prev.url}}"
+           class="navigation navigation-prev " th:aria-label="'Previous page:'+ ${currentIndex.prev.label}">
+            <i class="fa fa-angle-left"></i>
+        </a>
+
+
+        <a th:if="${currentIndex.next!=null}" th:href="@{${currentIndex.next.url}}"
+           class="navigation navigation-next " th:aria-label="'Next page:'+ ${currentIndex.next.label}"
+           style="margin-right: 0px;">
+            <i class="fa fa-angle-right"></i>
+        </a>
+
+
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function () {
+            gitbook.page.hasChanged(
+                    {
+                        "page": [(${currentIndex.bookJson})],
+                        "config": {
+                            "plugins": ["-highlight", "-search", "-lunr", "-livereload"],
+                            "styles": {
+                                "website": "styles/website.css",
+                                "pdf": "styles/pdf.css",
+                                "epub": "styles/epub.css",
+                                "mobi": "styles/mobi.css",
+                                "ebook": "styles/ebook.css",
+                                "print": "styles/print.css"
+                            },
+                            "pluginsConfig": {
+                                "sharing": {
+                                    "facebook": true,
+                                    "twitter": true,
+                                    "google": false,
+                                    "weibo": true,
+                                    "instapaper": false,
+                                    "vk": false,
+                                    "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+                                },
+                                "fontsettings": {"theme": "white", "family": "sans", "size": 2},
+                                "theme-default": {
+                                    "styles": {
+                                        "website": "styles/website.css",
+                                        "pdf": "styles/pdf.css",
+                                        "epub": "styles/epub.css",
+                                        "mobi": "styles/mobi.css",
+                                        "ebook": "styles/ebook.css",
+                                        "print": "styles/print.css"
+                                    }, "showLevel": false
+                                }
+                            },
+                            "theme": "default",
+                            "author": "xiexx",
+                            "pdf": {
+                                "pageNumbers": true,
+                                "fontSize": 12,
+                                "fontFamily": "Arial",
+                                "paperSize": "a4",
+                                "chapterMark": "pagebreak",
+                                "pageBreaksBefore": "/",
+                                "margin": {"right": 62, "left": 62, "top": 56, "bottom": 56}
+                            },
+                            "structure": {
+                                "langs": "LANGS.md",
+                                "readme": "README.md",
+                                "glossary": "GLOSSARY.md",
+                                "summary": "SUMMARY.md"
+                            },
+                            "variables": {},
+                            "title": "Gibook",
+                            "language": "zh-hans",
+                            "links": {"sidebar": {"Home": "http://xiexx.cn"}},
+                            "gitbook": "3.2.2",
+                            "description": "[[${book.name}]]"
+                        },
+                        "file": {"path": "README.md", "mtime": "2016-11-17T07:26:41.840Z", "type": "markdown"},
+                        "gitbook": {"version": "3.2.2", "time": "2016-12-28T09:37:24.671Z"},
+                        "basePath": ".",
+                        "book": {"language": ""}
+                    }
+            )
+        });
+
+    </script>
+</div>
+
+
+<script th:src="@{/gitbook/gitbook.js}"></script>
+<script th:src="@{/gitbook/theme.js}"></script>
+<script th:src="@{/gitbook/gitbook-plugin-sharing/buttons.js}"></script>
+
+<script th:src="@{/gitbook/gitbook-plugin-fontsettings/fontsettings.js}"></script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title th:text="${siteconfig[name]}?:'xiexx博客'+'-文章分类-'+${catalog}">xiexx-专注Java技术的研究，关注程序员的发展</title>
+    <meta name="description"
+          th:content="${siteconfig[description]}?:'xiexx博客'"/>
+    <meta name="keywords" th:content="${siteconfig[keywords]}?:'xiexx博客'"/>
+    <div th:replace="head"></div>
+    <style type="text/css">
+        .kw{color:#dd4b39;}
+    </style>
+</head>
+
+<body>
+<div th:replace="header"></div>
+<div id="main" style="min-height: 800px;">
+    <div class="row box">
+        <div class="col-md-8">
+            <!--<h2 class="uptop"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a-->
+            <!--th:href="@{/blog/catalog/{catalog}(catalog=${catalog})}" rel="category tag"-->
+            <!--th:text="${item.catalogDisplay}">不容错过的产品经理书籍推荐</a></h2>-->
+            <h2 th:if="${#lists.isEmpty(pageModel.list)}">暂无文章</h2>
+            <article class="article-list-1 clearfix" th:each="item:${pageModel.list}">
+                <header class="clearfix">
+                    <h1 class="post-title"><a th:href="@{${item.link}}" th:utext="${item.title}">三套极简风格的WordPress主题模板</a>
+                    </h1>
+                    <div class="post-meta">
+                        <span class="meta-span"><i class="fa fa-calendar"></i> <span
+                                th:text="${#dates.format(item.publishTime,'yyyy/MM/dd')}"></span></span>
+                        <span class="meta-span"><i class="fa fa-folder-open-o"></i> <a
+                                th:href="@{/blog/catalog/{catalog}(catalog=${item.catalog})}" rel="category tag"
+                                th:utext="${item.catalogDisplay}">一些分享</a></span>
+
+                    </div>
+                    <div th:if="${isSearch} and ${item.summary!=null}" th:utext="${item.summary}+'...'"></div>
+                </header>
+
+            </article>
+            <br/>
+            <div id="pagebar"
+                 style="color:white;line-height: 50px;cursor: pointer;background-color: #5bc0eb;text-align: center;"
+                 th:if="${(not #lists.isEmpty(pageModel.list))}">
+                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (page &gt 1)}" th:href="@{/blog/catalog/{catalog}(catalog=${catalog},page=${page-1})}">上一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (pageModel.hasNext)}" th:href="@{/blog/catalog/{catalog}(catalog=${catalog},page=${page+1})}">下一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (pageModel.hasNext)} " th:href="@{/search(s=${s},page=${page+1})}">下一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (page &gt 1)} " th:href="@{/search(s=${s},page=${page-1})}">上一页</a>
+
+            </div>
+
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+
+
+            <aside class="widget clearfix">
+                <h4 class="widget-title">文章分类</h4>
+                <div class="widget-cat">
+                    <ul>
+
+                        <li class="cat-item cat-item-20" th:each="catalog:${catalogs}">
+                            <a th:href="@{/blog/catalog/{catalog}(catalog=${catalog.id})}"
+                               th:text="${catalog.label}">分类</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </aside>
+            <!--<aside class="widget clearfix">-->
+            <!--<h4 class="widget-title">推荐阅读</h4>-->
+            <!--<ul class="widget-hot">-->
+
+            <!--&lt;!&ndash;<li><a href="http://tangjie.me/blog/196.html" target="_blank">【博客改版】极简风格，全新JieStyle</a></li>&ndash;&gt;-->
+
+            <!--</ul>-->
+            <!--</aside>-->
+
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="footer"></div>
+
+</body>
+</html>

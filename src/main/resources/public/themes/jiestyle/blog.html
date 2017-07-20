@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title th:text="${blog.title}+'-'+${siteconfig.name}?:'xiexx博客'">标题</title>
+    <meta name="description"
+          th:content="${siteconfig.description}?:'xiexx博客'"/>
+    <meta name="keywords" th:content="${siteconfig.keywords}?:'xiexx博客'"/>
+    <div th:replace="head"></div>
+
+</head>
+
+<body>
+<div th:replace="header"></div>
+<div id="main" style="min-height: 800px;">
+    <article class="col-md-8 col-md-offset-2 view clearfix">
+        <h1 class="view-title" th:text="${blog.title}">标题</h1>
+        <div class="view-meta">
+            <span>作者: @xiexx</span>
+            <span>微信公众号:Java技术</span>
+            <span>阅读数:<span th:text="${blog.views}"></span></span>
+            <span>分类: <a th:href="@{/blog/catalog/{catalog}(catalog=${blog.catalog})}" rel="category tag"
+                         th:text="${blog.catalogDisplay}">catalog</a></span>
+
+        </div>
+        <div class="view-content">
+            <div class="editormd-preview">
+                <div th:utext="${blog.display}" class="markdown-body editormd-preview-container" previewcontainer="true"
+                     style="padding: 20px;font-size: 16px;line-height: 30px;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br/>
+        <section class="support-author">
+            <p>我的文章对你有用么！</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i
+                    class="fa fa-cny" aria-hidden="true"></i> 顶一把
+            </button>
+        </section>
+
+    </article>
+    <section class="col-md-8 col-md-offset-2 clearfix" th:if="${not(#lists.isEmpty(similars))}">
+    <div class="read">
+    <div class="read-head"><i class="fa fa-book"></i> 相关文章</div>
+    <div class="read-list row">
+    <div class="col-md-12">
+    <ul th:each="item:${similars}">
+
+    <li><a th:href="@{${item.link}}" th:utext="${item.title}">【博客改版】极简风格，全新JieStyle</a></li>
+       </ul>
+    </div>
+
+    </div>
+    </div>
+
+        <br/>
+        <div id="SOHUCS" th:sid="${blog.id}"></div>
+        <script type="text/javascript">
+            (function () {
+                var appid = 'cysLQndbF';
+                var conf = 'prod_3079dbdfcaec407dfdfa5ba2341d5cba';
+                var width = window.innerWidth || document.documentElement.clientWidth;
+                if (width < 960) {
+                    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+                } else {
+                    var loadJs = function (d, a) {
+                        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+                        var b = document.createElement("script");
+                        b.setAttribute("type", "text/javascript");
+                        b.setAttribute("charset", "UTF-8");
+                        b.setAttribute("src", d);
+                        if (typeof a === "function") {
+                            if (window.attachEvent) {
+                                b.onreadystatechange = function () {
+                                    var e = b.readyState;
+                                    if (e === "loaded" || e === "complete") {
+                                        b.onreadystatechange = null;
+                                        a()
+                                    }
+                                }
+                            } else {
+                                b.onload = a
+                            }
+                        }
+                        c.appendChild(b)
+                    };
+                    loadJs("http://changyan.sohu.com/upload/changyan.js", function () {
+                        window.changyan.api.config({appid: appid, conf: conf})
+                    });
+                }
+            })(); </script>
+
+    </section>
+
+</div>
+<!--modal-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-cny" aria-hidden="true"></i> 打赏支持</h4>
+            </div>
+            <div class="modal-body text-center">
+                <p> <img border="0" th:src="@{/themes/jiestyle/images/wechat.jpg}"
+                         alt="xiexx微信钱包"
+                         width="180" height="180" style="margin: 0 8%;"/>
+                    <img border="0" th:src="@{/themes/jiestyle/images/alipay.jpg}" alt="xiexx支付宝" width="180" height="180"
+                        style="margin: 0 8%;"/></p>
+                <p>扫描二维码，输入您要打赏的金额</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal-->
+
+<div th:replace="footer"></div>
+
+
+</body>
+</html>
