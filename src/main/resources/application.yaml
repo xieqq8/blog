@@ -1,11 +1,10 @@
-
-#server:
-#    port: 8686
-#    compression:
-#        enabled: true
-#    connection-timeout: 3000
-#    tomcat:
-#        uri-encoding: utf-8
+server:
+    port: 8686
+    compression:
+        enabled: true
+    connection-timeout: 3000
+    tomcat:
+        uri-encoding: utf-8
 
 #debug: false
 
@@ -54,9 +53,9 @@ spring:
       prefix: classpath:/public/themes/jiestyle/
       mode: LEGACYHTML5
 
-mybatis:
-    mapperLocations: classpath:mapping/*.xml
-    typeAliasesPackage: com.xxx.blog.domain.entity
+#mybatis:
+#    mapperLocations: classpath:mapping/*.xml
+#    typeAliasesPackage: com.xxx.blog.domain.entity
 
 blog:
   manage:
