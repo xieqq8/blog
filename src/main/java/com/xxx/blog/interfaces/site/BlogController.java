@@ -24,6 +24,11 @@ public class BlogController {
     @Autowired
     private SiteConfigService siteConfigService;
 
+    @GetMapping("/index1")
+    public String mainIndex(Model model){
+
+        return "index1";
+    }
 
     @GetMapping(value = {"/", "/blog", "/index.html"})
     public String index(Model model) {
