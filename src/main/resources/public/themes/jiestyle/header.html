@@ -1,5 +1,12 @@
 <header id="header">
-    <div style="margin-top: 15px"><a href="/"><img th:src="@{${siteconfig[logo]}?:'/themes/jiestyle/images/logo.png'}"/></a></div>
+
+    <div id="main-wrapper">
+        <nav id="mainmenu">
+        </nav>
+    </div>
+
+    <div style="margin-top: 15px"><a href="/"><img th:src="@{${siteconfig[logo]}?:'/themes/jiestyle/images/logo.png'}"/></a>
+    </div>
     <span id="name" style="display: none" th:text="${siteconfig.name}?:'@xiexx博客'"></span>
     <div class="nav">
         <ul>
@@ -27,8 +34,9 @@
         </form>
     </aside>
 
-        <div style="margin-top: 80px;margin-bottom: 20px;text-align: center">
-            <img th:src="@{/themes/jiestyle/images/weixin.jpg}" alt="xiexx微信" width="80%"/>
-        </div>
+    <div style="margin-top: 80px;margin-bottom: 20px;text-align: center">
+        <img th:src="@{/themes/jiestyle/images/weixin.jpg}" alt="xiexx微信" width="80%"/>
+    </div>
+
 
 </header>
