@@ -121,7 +121,8 @@ public class Blog implements Serializable{
 	}
 
 	public String getLink(){
-		return "/blog/"+id;
+//		return "/blog/"+id;
+		return "/iblog/"+id; // 新的样式
 	}
 
 	public String getFullTitle() {

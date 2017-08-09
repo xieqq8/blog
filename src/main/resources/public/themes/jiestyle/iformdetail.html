@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="WmxiVUlEN1VpBS8vBCtjPS8oKQN5EVRlDS87YSMmBgIVByAzHQh/HA==">
+    <title th:text="${blog.title}+'-'+${siteconfig.name}?:'xiexx博客'">标题</title>
+    <meta name="description"
+          th:content="${siteconfig.description}?:'xiexx博客'"/>
+    <meta name="keywords" th:content="${siteconfig.keywords}?:'xiexx博客'"/>
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{/themes/jiestyle/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/themes/jiestyle/css/index_style.css}"/>
+</head>
+<body>
+
+<header class="headers">
+    <div class="container-fluid form1-fluid">
+        <div class="row my-row">
+            <div class="col-md-4">
+                <a href="/indexform"><img th:src="@{/themes/jiestyle/images/logo.png}" width="160" height="43"
+                                          alt="mainlogo"/></a>
+            </div>
+
+            <div class="col-md-8 progress-eve">
+                和你在一起
+                <!--Make a little <a href="http://form1.cn/style-html5-31.html">progress</a> every day-->
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse my-collapse">
+                <ul class="nav navbar-nav my-nav">
+                    <li class="active"><a href="/indexform">Home</a></li>
+                    <!--<li><a href="/linux.html">Spring</a></li>-->
+                    <!--<li><a href="/database.html">Java</a></li>-->
+                    <li class="cat-item cat-item-20" th:each="catalog:${catalogs}">
+                        <a th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog.id})}"
+                           th:text="${catalog.label}">分类</a>
+                    </li>
+                    <!--<li id="dropdown">-->
+
+                    <!--<a href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"-->
+                    <!--id="backcolor">-->
+                    <!--Tools <span class="caret"></span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="/tools-json-format.html">JSON format</a></li>-->
+                    <!--<li><a href="/tools-unix-format.html">Unix time format</a></li>-->
+                    <!--<li><a href="/tools-md5-encrypt.html">MD5 encrypt</a></li>-->
+                    <!--<li><a href="/tools-url-encoding.html">URL encoding</a></li>-->
+                    <!--&lt;!&ndash;<li><a href="#">JS Encryption and decryption</a></li>-->
+                    <!--<li><a href="#">Send HTTP request</a></li>&ndash;&gt;-->
+                    <!--</ul>-->
+
+                    <!--</li>-->
+
+
+                </ul>
+                <form id="form1" name="form1" method="get" class="navbar-form navbar-right my-form1"
+                      action="http://form1.cn/search.html" role="search">
+                    <div class="form-group">
+                        <span class="glyphicon glyphicon-search my-glsearch" id="submit_search"></span>
+                        <input type="text" id="search" name="search" class="form-control my-form1-control"
+                               placeholder="Search" value="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="section">
+
+    <script type="text/javascript" src="/public/ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" href="/public/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" type="text/css"/>
+    <script>SyntaxHighlighter.all();</script>
+    <div class="row">
+        <div class="col-md-8 my-colmd-8">
+
+            <ol class="breadcrumb my-breadcrumb">
+                <span class="glyphicon glyphicon-log-out"></span>
+                <li><a href="/"><strong>Home</strong></a></li>
+                <li><a href="/java.html">Java</a></li>
+                <li><a href="/java.html">Java</a></li>
+            </ol>
+
+            <div class="box-con">
+                <h2 class="box-title box-content" th:text="${blog.title}">标题</h2>
+
+
+                <div class="box-twig twig-color">
+                    <!--<span>作者: @xiexx</span>-->
+                    <span class="date" th:text="${#dates.format(blog.publishTime,'yyyy/MM/dd')}">08th of August 2017</span>
+
+                    <!--<span>微信公众号:Java技术</span>-->
+                    <span>阅读数:<span th:text="${blog.views}"></span></span>
+                    <span>分类: <a th:href="@{/iblog/icatalog/{catalog}(catalog=${blog.catalog})}" rel="category tag"
+                                 th:text="${blog.catalogDisplay}">catalog</a></span>
+
+                </div>
+                <div class="box-excerpt box-minhet">
+                    <div class="editormd-preview">
+                        <div th:utext="${blog.display}" class="markdown-body editormd-preview-container" previewcontainer="true"
+                             style="padding: 20px;font-size: 16px;line-height: 30px;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--<h2 class="box-title box-content">-->
+                    <!--查看linux中的TCP的各种连接数 </h2>-->
+
+                <!--<div class="box-nextup">-->
+                    <!--上一篇：-->
+                    <!--<a href="/java-java-188.html" title="thymeleaf获取配置properties中的数据与thymeleaf国际化">thymeleaf获取配置properties中的数据与thymeleaf国际化</a>-->
+                <!--</div>-->
+                <!--<div class="box-nextup">-->
+                    <!--下一篇：-->
+                    <!--<span class="text-muted">没有了</span></div>-->
+            </div>
+
+        </div>
+
+        <div class="col-md-4 my-colmd-4">
+            <div class="box-con class-list">
+                <dl>
+                    <span class="glyphicon glyphicon-align-center"></span>&nbsp;Label
+                </dl>
+                <ul>
+                    <!--<li><a href="/nginx.html" title="Nginx">Nginx</a></li>-->
+                    <!--<li><a href="/apache.html" title="Apache">Apache</a></li>-->
+                    <!--<li><a href="/svn.html" title="SVN">SVN</a></li>-->
+                    <!--<li><a href="/git.html" title="GIT">GIT</a></li>-->
+                    <!--<li><a href="/command.html" title="Command">Command</a></li>-->
+                    <!--<li><a href="/memcached.html" title="Memcached">Memcached</a></li>-->
+                    <!--<li><a href="/sphinx.html" title="Sphinx">Sphinx</a></li>-->
+                    <!--<li><a href="/mysql.html" title="Mysql">Mysql</a></li>-->
+                    <!--<li><a href="/redis.html" title="Redis">Redis</a></li>-->
+                    <!--<li><a href="/mongodb.html" title="Mongodb">Mongodb</a></li>-->
+                    <!--<li><a href="/thinkphp.html" title="Thinkphp">Thinkphp</a></li>-->
+                    <!--<li><a href="/yii2.html" title="Yii2">Yii2</a></li>-->
+                    <!--<li><a href="/phpcode.html" title="PHPcode">PHPcode</a></li>-->
+                    <!--<li><a href="/jquery.html" title="Jquery">Jquery</a></li>-->
+                    <!--<li><a href="/js.html" title="JS">JS</a></li>-->
+                    <!--<li><a href="/css.html" title="Css">Css</a></li>-->
+                    <!--<li><a href="/bootstrap.html" title="Bootstrap">Bootstrap</a></li>-->
+                    <!--<li><a href="/html5.html" title="Html5">Html5</a></li>-->
+                    <!--<li><a href="/courserecord.html" title="CourseRecord">CourseRecord</a></li>-->
+                    <!--<li><a href="/swift%2Bios.html" title="Swift+IOS">Swift+IOS</a></li>-->
+                    <!--<li><a href="/java.html" title="Java">Java</a></li>-->
+                </ul>
+            </div>
+            <div class="box-con hot-list">
+                <dl>
+                    <span class="glyphicon glyphicon-list"></span>&nbsp;Hot
+                </dl>
+                <ul>
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/php-yii2-141.html"-->
+                                                                              <!--title="Yii2使用composer安装MongoDB扩展">Yii2使用composer安装MongoDB扩展</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/swift-swift%2Bios-148.html"-->
+                                                                              <!--title="Swift3.0设置状态栏的背景颜色与文字颜色">Swift3.0设置状态栏的背景颜色与文字..</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/php-yii2-143.html"-->
+                                                                              <!--title="Yii2中MongoDB的使用方法-CURD">Yii2中MongoDB的使用方法-CURD</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/swift-swift%2Bios-147.html"-->
+                                                                              <!--title="swift3.0设置导航栏,标题,字体,item颜色和字体大小">swift3.0设置导航栏,标题,字体,item..</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/style-html5-31.html"-->
+                                                                              <!--title="Html5中progress标签用法">Html5中progress标签用法</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/php-phpcode-33.html"-->
+                                                                              <!--title="php中curl用法初步讲解">php中curl用法初步讲解</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/php-phpcode-39.html"-->
+                                                                              <!--title="PHP中Orientation判断上传图片是否需要旋转">PHP中Orientation判断上传图片是否需..</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/database-mysql-26.html"-->
+                                                                              <!--title="Mysql的source命令导入大的sql文件方法">Mysql的source命令导入大的sql文件方..</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/linux-nginx-37.html"-->
+                                                                              <!--title="Nginx反向代理基本设置的21个指令">Nginx反向代理基本设置的21个指令</a>-->
+                    <!--</li>-->
+                    <!--<li><span class="glyphicon glyphicon-unchecked"></span><a href="/linux-command-29.html"-->
+                                                                              <!--title="Linux中tar压缩命令详解">Linux中tar压缩命令详解</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footers">
+    <div class="row">
+        <div class="col-md-6">
+            Copyright © 2017 by MyDocument <a href="http://form1.cn" target="_blank">form1.cn</a> · All Rights Reserved
+        </div>
+        <div class="col-md-6 my-email">
+            Email: <a href="mailto:market@form1.cn">market@form1.cn</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal 冗余Modal... -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title" id="myModalLabel">System message</h5>
+            </div>
+            <div class="modal-body text-danger">Please enter keyword!</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 冗余Modal... -->
+<div class="modal fade bs-example-modal-sm" id="jsonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h5 class="modal-title" id="myModalLabel">System message</h5>
+            </div>
+            <div class="modal-body text-danger">JSON syntax error!</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/themes/jiestyle/js/jquery.min.js}"></script>
+<script th:src="@{/themes/jiestyle/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/themes/jiestyle/js/index_script.js}"></script>
+</body>
+</html>
