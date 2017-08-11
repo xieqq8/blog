@@ -4,7 +4,7 @@ import com.xxx.blog.interfaces.manage.facade.BookIndexFacade;
 import com.xxx.blog.interfaces.manage.facade.command.BookUpdateCommand;
 import com.xxx.blog.interfaces.manage.facade.BookManageFacade;
 import com.xxx.blog.interfaces.shard.BookQueryFacade;
-import org.bumishi.toolbox.model.RestResponse;
+import com.xxx.toolbox.model.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

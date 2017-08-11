@@ -38,6 +38,9 @@ public class BlogController {
      */
     @GetMapping("/indexform")
     public String indexform(Model model){
+        // 总条数，算分页
+
+        //
         model.addAttribute("pageModel", blogFacade.pageQuery(1, siteConfigService.pageSize()));
         model.addAttribute("catalog", "java");
         model.addAttribute("page", 1);

@@ -8,7 +8,7 @@ import com.xxx.blog.interfaces.site.facade.SiteBlogFacade;
 import com.xxx.blog.interfaces.site.facade.dto.GitBookDto;
 import com.xxx.blog.interfaces.site.facade.GitBookFacade;
 import com.xxx.blog.interfaces.site.facade.dto.BlogDetailDto;
-import org.bumishi.toolbox.model.TreeModel;
+import com.xxx.toolbox.model.TreeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,9 +1,8 @@
 package com.xxx.blog.infrastructure.persistence.jdbc;
 
-
-import org.bumishi.toolbox.model.NavigationNode;
-import org.bumishi.toolbox.model.TreeModel;
-import org.bumishi.toolbox.model.repositry.NavigationNodeRepositry;
+import com.xxx.toolbox.model.NavigationNode;
+import com.xxx.toolbox.model.TreeModel;
+import com.xxx.toolbox.model.repositry.NavigationNodeRepositry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

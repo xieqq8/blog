@@ -68,20 +68,20 @@
                       action="/isearch" role="search">
                     <div class="form-group">
                         <span class="glyphicon glyphicon-search my-glsearch" id="submit_search"></span>
-                        <input type="text" id="search" name="search"  class="form-control my-form1-control"
+                        <input type="text" id="search" name="search" class="form-control my-form1-control"
                                placeholder="搜索…" value="">
                     </div>
                 </form>
 
                 <!--<form id="searchform" action="/search" method="get">-->
-                    <!--<div class="input-group">-->
-                        <!--<input type="search" class="form-control" placeholder="搜索…" required="required" name="s">-->
-                        <!--<span class="input-group-btn">-->
-                        <!--<button class="btn btn-default" type="submit"><i class="fa fa-search"-->
-                                                                         <!--aria-hidden="true"></i></button>-->
-                        <!--</span></div>-->
+                <!--<div class="input-group">-->
+                <!--<input type="search" class="form-control" placeholder="搜索…" required="required" name="s">-->
+                <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-default" type="submit"><i class="fa fa-search"-->
+                <!--aria-hidden="true"></i></button>-->
+                <!--</span></div>-->
                 <!--</form>-->
-            <!--</div>-->
+            </div>
         </div>
     </nav>
 </header>
@@ -94,8 +94,12 @@
 
             <div class="box-con box-con-pading">
                 <div class="box-img boximg-pading">
-                    <iframe src="http://www.jq22.com/demo/jquery-gs20170110/" frameborder="0" scrolling="no" width="720"
-                            height="320"></iframe>
+                    <!--<iframe src="http://www.jq22.com/demo/jquery-gs20170110/" frameborder="0" scrolling="no" width="720"-->
+                            <!--height="320"></iframe>-->
+
+                    <iframe src="http://www.jq22.com/demo/TheMatrix201702072353/" frameborder="0" scrolling="no"
+                            width="720" height="320"></iframe>
+
                     <!--
                     HTML5动画：/public/html5/html5-canvas-particle-effect/index.html
                     -->
@@ -195,10 +199,14 @@
             <div id="pagebar"
                  style="color:white;line-height: 50px;cursor: pointer;background-color: #5bc0eb;text-align: center;"
                  th:if="${(not #lists.isEmpty(pageModel.list))}">
-                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (page &gt 1)}" th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page-1})}">上一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (pageModel.hasNext)}" th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page+1})}">下一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (pageModel.hasNext)} " th:href="@{/isearch(s=${s},page=${page+1})}">下一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (page &gt 1)} " th:href="@{/isearch(s=${s},page=${page-1})}">上一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (page &gt 1)}"
+                   th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page-1})}">上一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (pageModel.hasNext)}"
+                   th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page+1})}">下一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (pageModel.hasNext)} "
+                   th:href="@{/isearch(s=${s},page=${page+1})}">下一页</a>
+                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (page &gt 1)} "
+                   th:href="@{/isearch(s=${s},page=${page-1})}">上一页</a>
             </div>
         </div>
 

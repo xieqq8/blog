@@ -3,7 +3,7 @@ package com.xxx.blog.interfaces.manage.web;
 import com.xxx.blog.interfaces.manage.facade.NavFacade;
 import com.xxx.blog.interfaces.manage.facade.command.NavigationUpdateCommond;
 import com.xxx.blog.interfaces.manage.facade.command.NavigationCreateCommand;
-import org.bumishi.toolbox.model.RestResponse;
+import com.xxx.toolbox.model.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

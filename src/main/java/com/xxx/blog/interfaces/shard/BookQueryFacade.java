@@ -2,7 +2,7 @@ package com.xxx.blog.interfaces.shard;
 
 import com.xxx.blog.application.BookService;
 import com.xxx.blog.domain.model.Book;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;

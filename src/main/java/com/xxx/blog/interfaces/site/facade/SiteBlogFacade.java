@@ -7,7 +7,7 @@ import com.xxx.blog.domain.repository.BlogViewsRepostiry;
 import com.xxx.blog.interfaces.site.facade.dto.LinkBlog;
 import com.xxx.blog.interfaces.site.facade.dto.SimpleBlog;
 import com.xxx.blog.interfaces.site.facade.dto.BlogDetailDto;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.xxx.blog.infrastructure.persistence.jdbc;
 
 import com.xxx.blog.domain.model.Blog;
 import com.xxx.blog.domain.repository.BlogQueryRepositry;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

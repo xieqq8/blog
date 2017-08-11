@@ -2,7 +2,7 @@ package com.xxx.blog.domain.model;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import org.bumishi.toolbox.model.TreeModel;
+import com.xxx.toolbox.model.TreeModel;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,7 +1,7 @@
 package com.xxx.blog.interfaces.manage.web;
 
 import com.xxx.blog.application.SiteConfigService;
-import org.bumishi.toolbox.model.RestResponse;
+import com.xxx.toolbox.model.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -2,7 +2,7 @@ package com.xxx.blog.interfaces.manage.facade.assembler;
 
 import com.xxx.blog.interfaces.manage.facade.command.NavigationCreateCommand;
 import com.xxx.blog.interfaces.manage.facade.command.NavigationUpdateCommond;
-import org.bumishi.toolbox.model.NavigationNode;
+import com.xxx.toolbox.model.NavigationNode;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

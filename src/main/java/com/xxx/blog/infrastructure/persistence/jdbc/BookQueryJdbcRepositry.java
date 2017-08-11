@@ -2,7 +2,7 @@ package com.xxx.blog.infrastructure.persistence.jdbc;
 
 import com.xxx.blog.domain.model.Book;
 import com.xxx.blog.domain.repository.BookQueryRepositry;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -50,7 +50,7 @@ public class BookQueryJdbcRepositry implements BookQueryRepositry {
         if (!CollectionUtils.isEmpty(blogs)) {
             pageModel.setList(blogs);
             if (blogs.size() >= size) {
-                pageModel.setHasNext(true);
+                pageModel.setHasNext(true); // 是否有下一页
             }
         }
         return pageModel;

@@ -1,7 +1,7 @@
 package com.xxx.blog.domain.repository;
 
 import com.xxx.blog.domain.model.Blog;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 
 /**
  * 博客查询仓储,方便使用各种nosql存储及索引

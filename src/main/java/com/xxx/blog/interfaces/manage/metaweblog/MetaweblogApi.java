@@ -6,7 +6,7 @@ import com.xxx.blog.interfaces.manage.facade.BlogFacade;
 import com.xxx.blog.interfaces.manage.facade.CatalogFacade;
 import com.xxx.blog.interfaces.manage.facade.command.WriteBlogCommand;
 import com.xxx.blog.interfaces.manage.facade.dto.BlogDto;
-import org.bumishi.toolbox.model.NavigationNode;
+import com.xxx.toolbox.model.NavigationNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

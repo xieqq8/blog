@@ -5,7 +5,7 @@ import com.xxx.blog.domain.model.Blog;
 import com.xxx.blog.interfaces.manage.facade.assembler.BlogAssember;
 import com.xxx.blog.interfaces.manage.facade.command.WriteBlogCommand;
 import com.xxx.blog.interfaces.manage.facade.dto.BlogDto;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -51,7 +51,7 @@ public class BlogFacade {
     public PageModel<BlogDto> pageQuery(int page, int size) {
         PageModel<BlogDto> pageModel=new PageModel();
         PageModel<Blog> blogPageModel=blogService.queryByTime(page,size);
-        pageModel.setHasNext(blogPageModel.isHasNext());
+        pageModel.setHasNext(blogPageModel.isHasNext()); //
         pageModel.setPage(blogPageModel.getPage());
         pageModel.setSize(blogPageModel.getSize());
         if(!CollectionUtils.isEmpty(blogPageModel.getList())) {

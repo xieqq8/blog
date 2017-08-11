@@ -7,8 +7,8 @@ import com.xxx.blog.domain.model.event.BookDeleteEvent;
 import com.xxx.blog.domain.repository.BookCommandRepositry;
 import com.xxx.blog.domain.repository.BookIndexRepositry;
 import com.xxx.blog.domain.repository.BookQueryRepositry;
-import org.bumishi.toolbox.model.PageModel;
-import org.bumishi.toolbox.model.TreeModel;
+import com.xxx.toolbox.model.PageModel;
+import com.xxx.toolbox.model.TreeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -59,7 +59,7 @@ public class BookService {
     }
 
     @Cacheable(EventHandler.BOOK_PAGE_CACHE)
-    public PageModel<Book> queryByTime(int page,int size){
+    public PageModel<Book> queryByTime(int page, int size){
         return bookQueryRepositry.queryByTime(page, size);
     }
 

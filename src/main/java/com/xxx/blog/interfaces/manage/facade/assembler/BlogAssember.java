@@ -5,7 +5,7 @@ import com.xxx.blog.domain.model.BlogId;
 import com.xxx.blog.domain.model.MarkDownToHtml;
 import com.xxx.blog.interfaces.manage.facade.command.WriteBlogCommand;
 import com.xxx.blog.interfaces.manage.facade.dto.BlogDto;
-import org.bumishi.toolbox.model.repositry.NavigationNodeRepositry;
+import com.xxx.toolbox.model.repositry.NavigationNodeRepositry;
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 import org.springframework.beans.BeanUtils;

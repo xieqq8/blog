@@ -1,7 +1,7 @@
 package com.xxx.blog.domain.repository;
 
 import com.xxx.blog.domain.model.Book;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 
 /**
  * Created by xiexx on 2017/11/27.

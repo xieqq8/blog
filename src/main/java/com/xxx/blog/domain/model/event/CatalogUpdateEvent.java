@@ -1,6 +1,7 @@
 package com.xxx.blog.domain.model.event;
 
-import org.bumishi.toolbox.model.NavigationNode;
+
+import com.xxx.toolbox.model.NavigationNode;
 
 /**
  * catalog新增或修改事件，用于通知缓存更新

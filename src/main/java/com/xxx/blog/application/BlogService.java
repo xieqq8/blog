@@ -7,7 +7,7 @@ import com.xxx.blog.domain.model.event.BlogUpdateEvent;
 import com.xxx.blog.domain.repository.BlogCommandRepositry;
 import com.xxx.blog.domain.repository.BlogQueryRepositry;
 import com.xxx.blog.infrastructure.persistence.jdbc.BlogQueryJdbcRepositry;
-import org.bumishi.toolbox.model.PageModel;
+import com.xxx.toolbox.model.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.annotation.Cacheable;
@@ -66,7 +66,7 @@ public class BlogService {
     }
 
     @Cacheable(EventHandler.BLOG_PAGE_CACHE)
-    public PageModel<Blog> queryByCatalog(int page,int size,String catalog){
+    public PageModel<Blog> queryByCatalog(int page, int size, String catalog){
         return blogQueryRepositry.queryByCatalog(page, size, catalog);
     }
 

@@ -1,7 +1,7 @@
 package com.xxx.blog.interfaces.manage;
 
 import com.alibaba.fastjson.JSON;
-import org.bumishi.toolbox.model.RestResponse;
+import com.xxx.toolbox.model.RestResponse;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

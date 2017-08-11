@@ -1,8 +1,8 @@
 package com.xxx.blog.domain.repository;
 
 import com.xxx.blog.domain.model.BookIndex;
-import org.bumishi.toolbox.model.repositry.TreeNodeCommandRepositry;
-import org.bumishi.toolbox.model.repositry.TreeNodeQueryRepositry;
+import com.xxx.toolbox.model.repositry.TreeNodeCommandRepositry;
+import com.xxx.toolbox.model.repositry.TreeNodeQueryRepositry;
 
 import java.util.List;
 
