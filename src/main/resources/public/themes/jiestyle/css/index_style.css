@@ -5,23 +5,23 @@ a:focus{outline: none;}
 
 ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-weight:normal; text-decoration:none;}
 
-::selection{background:#a63f16;color:#FFF;}
-::-moz-selection{background:#a63f16;color:#FFF;}
+::selection{background:#e4562b;color:#FFF;}
+::-moz-selection{background:#e4562b;color:#FFF;}
 
 .headers{width: 100%; height: auto; padding-bottom: 20px;}
 .form1-fluid{width: 100%; height: 70px; background-color: #ffffff;}
-.navbar-default{background-color: #206494; border: 0px; border-radius: 0px; margin: 0px; min-height: 42px;}
+.navbar-default{background-color: #df2065; border: 0px; border-radius: 0px; margin: 0px; min-height: 42px;}
 .navbar-default .my-nav > li > a{padding-bottom: 11px; padding-top: 11px; color: #ffffff; margin-right: 4px; font-family: "Courier New", Courier, monospace; font-size: 16px;}
-.navbar-default .my-nav > .active > a {background-color: #a63f16; color: #fff;}
+.navbar-default .my-nav > .active > a {background-color: #e4562b; color: #fff;}
 
-.navbar-default .my-nav > li > a:focus,.navbar-default .my-nav > li > a:hover,.navbar-default .my-nav > .active > a:focus,.navbar-default .my-nav > .active > a:hover {background-color: #a63f16; color: #fff;}
+.navbar-default .my-nav > li > a:focus,.navbar-default .my-nav > li > a:hover,.navbar-default .my-nav > .active > a:focus,.navbar-default .my-nav > .active > a:hover {background-color: #e4562b; color: #fff;}
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {background-color: #a63f16; color: #fff;}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {background-color: #e4562b; color: #fff;}
 
 
 .container-fluid .my-collapse{width:1100px; margin: 0 auto;}
 .my-form1{margin: 0px; padding: 0px;}
-.navbar-form .my-form1-control{background-color: #206494; border: 1px solid #bbdaee; width: 276px; height: 32px; margin-top: 5px; color: #fff; border-radius: 2px; font-weight: 200; font-family: "Courier New", Courier, monospace; padding-right: 36px; overflow: hidden;}
+.navbar-form .my-form1-control{background-color: #df2065; border: 1px solid #bbdaee; width: 276px; height: 32px; margin-top: 5px; color: #fff; border-radius: 2px; font-weight: 200; font-family: "Courier New", Courier, monospace; padding-right: 36px; overflow: hidden;}
 
 .my-form1-control::-moz-placeholder {
     color: #f1f1f1; font-size: 14px; font-family: "Courier New", Courier, monospace;
@@ -40,7 +40,7 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 .progress-eve{text-align: right; font-size: 16px; font-family: 'Courier New', Courier, monospace;  margin-top:22px; color: #022022;}
 .progress-eve a{color: #e0693d; text-decoration:underline}
 
-.footers{width: 100%; height: 52px; overflow: hidden; background-color: #0A3756; color: #fff; font-family: 'Courier New', Courier, monospace; font-size: 13px;}
+.footers{width: 100%; height: 52px; overflow: hidden; background-color: #dd2067; color: #fff; font-family: 'Courier New', Courier, monospace; font-size: 13px;}
 .footers .row{width:1100px; margin: 0 auto; padding-top: 19px;}
 .footers .my-email{text-align: right;}
 .footers .row a,.footers .row a:focus,.footers .row a:hover{color: #fff;}
@@ -78,13 +78,13 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 .my-eye-open{margin-right: 6px; position: relative; top: 3px; color: #007CCB;}
 
 .section .class-list{padding: 0px;}
-.section .class-list dl{width: 100%; height: auto; overflow: hidden; background-color: #d8eafe; padding: 13px 10px 10px; color: #206494; font-size: 14px; margin: 0px; font-weight: bold;}
+.section .class-list dl{width: 100%; height: auto; overflow: hidden; background-color: #d8eafe; padding: 13px 10px 10px; color: #df2065; font-size: 14px; margin: 0px; font-weight: bold;}
 .section .class-list ul{width: 100%; height: auto; overflow: hidden; padding-top: 5px; padding-bottom: 10px;}
 .section .class-list ul li{}
 .section .class-list ul li a{float: left; padding: 5px 5px 2px 15px; font-size: 13px;}
 
 .section .hot-list{padding: 0px;}
-.section .hot-list dl{width: 100%; height: auto; overflow: hidden; background-color: #d8eafe; padding: 13px 10px 10px; color: #206494; font-size: 14px; margin: 0px; font-weight: bold;}
+.section .hot-list dl{width: 100%; height: auto; overflow: hidden; background-color: #d8eafe; padding: 13px 10px 10px; color: #df2065; font-size: 14px; margin: 0px; font-weight: bold;}
 .section .hot-list ul{padding-top: 3px; padding-bottom: 13px;}
 .section .hot-list ul li{padding-left: 12px; padding-top: 9px;}
 .section .hot-list ul li span{font-size: 8px; color: #337ab7; margin-right: 5px;}
@@ -93,7 +93,7 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 .my-breadcrumb{background-color: #ffffff; border-radius: 0px; margin-bottom: 10px; padding: 12px 10px 11px 10px;}
 .my-breadcrumb span{position: relative; top: 2px; color: #337ab7; margin-left: 2px; margin-right: 2px;}
 
-.section .box-con .box-content{padding-top: 5px; font-size: 18px; color: #206494;}
+.section .box-con .box-content{padding-top: 5px; font-size: 18px; color: #df2065;}
 .section .box-con .box-minhet  p{margin: 0px;}
 
 .syntaxhighlighter td.code .container::before{display: block;}
@@ -139,7 +139,7 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
     height:8px;
     margin:0 15px;
     text-align:center;
-    background:#206494;
+    background:#df2065;
     z-index:1000;
     cursor:pointer;
     filter:alpha(opacity=90); /*IE滤镜，透明度50%*/
@@ -221,7 +221,7 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 }
 /* 设置了浏览器宽度不大于320px时 abc 显示80%宽度 */
 
-.nav-m{background-color: #206494; width: 100%; height: 42px; margin-top: 8px; padding-left: 15px; padding-right: 15px;}
+.nav-m{background-color: #df2065; width: 100%; height: 42px; margin-top: 8px; padding-left: 15px; padding-right: 15px;}
 .nav-m .scroll-m{width: 100%; height: 42px; overflow-y: hidden; overflow-x:scroll}
 @media screen and (min-width: 700px) {
     .nav-m .scroll-m { overflow: hidden;}
@@ -229,7 +229,7 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 .nav-m ul{width: 470px;}
 .nav-m ul li{float: left;}
 .nav-m ul li a{padding-left: 10px; padding-right: 10px; display: block; width: auto; height: 42px; line-height: 44px; color: #fff; font-size: 14px; font-weight: bold;}
-.nav-m ul li a.cur{background-color: #a63f16; color: #fff;}
+.nav-m ul li a.cur{background-color: #e4562b; color: #fff;}
 @media screen and (min-width: 410px) {
     .nav-m ul li a {padding-left: 13px; padding-right: 13px;}
 }
@@ -251,10 +251,10 @@ ul,li{margin:0px;padding:0px;border:none;list-style:none;font-style:normal;font-
 .section-m .box-con .box-twig .comments-wrapper{float: right;}
 .section-m .box-con .box-minhet{padding-top: 15px; padding-bottom: 29px;}
 .section-m .box-con .box-minhet  p{margin: 0px;}
-.section-m .box-con .box-content{padding-top: 5px; font-size: 16px; color: #206494;}
+.section-m .box-con .box-content{padding-top: 5px; font-size: 16px; color: #df2065;}
 .pageno-m .pagination{margin-top: 0px; margin-bottom:10px; float: left;}
 
-.footers-m{width: 100%; height: 42px; overflow: hidden; background-color: #0A3756; color: #fff; font-family: 'Courier New', Courier, monospace; font-size: 13px; padding-left: 15px; line-height: 42px;}
+.footers-m{width: 100%; height: 42px; overflow: hidden; background-color: #dd2067; color: #fff; font-family: 'Courier New', Courier, monospace; font-size: 13px; padding-left: 15px; line-height: 42px;}
 .footers-m a{color: #fff;}
 
 

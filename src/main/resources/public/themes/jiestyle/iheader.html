@@ -1,0 +1,72 @@
+<header class="headers">
+    <div class="container-fluid form1-fluid">
+        <div class="row my-row">
+            <div class="col-md-4">
+                <a href="/indexform"><img th:src="@{/themes/jiestyle/images/logo.png}" width="160" height="43"
+                                          alt="mainlogo"/></a>
+            </div>
+
+            <div class="col-md-8 progress-eve">
+                和你在一起
+                <!--Make a little <a href="http://form1.cn/style-html5-31.html">progress</a> every day-->
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse my-collapse">
+                <ul class="nav navbar-nav my-nav">
+                    <li th:class="${icatalog == 'all'}? 'active' : ''"><a href="/indexform">Home</a></li>
+                    <!--<li><a href="/linux.html">Spring</a></li>-->
+                    <!--<li><a href="/database.html">Java</a></li>-->
+                    <li th:each="catalog:${catalogs}" th:class="${icatalog == catalog.id} ? 'active' : ''">
+                        <a th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog.id})}"
+                           th:text="${catalog.label}">分类</a>
+                    </li>
+
+                    <!--<li th:each="nav : ${pageInfo.navigatepageNums}" th:class="${nav != pageInfo.pageNum}? '' : 'active'">-->
+
+                    <!--class="cat-item cat-item-20"-->
+
+
+                    <!--<li id="dropdown">-->
+
+
+                    <!--<a href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"-->
+                    <!--id="backcolor">-->
+                    <!--Tools <span class="caret"></span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                    <!--<li><a href="/tools-json-format.html">JSON format</a></li>-->
+                    <!--<li><a href="/tools-unix-format.html">Unix time format</a></li>-->
+                    <!--<li><a href="/tools-md5-encrypt.html">MD5 encrypt</a></li>-->
+                    <!--<li><a href="/tools-url-encoding.html">URL encoding</a></li>-->
+                    <!--&lt;!&ndash;<li><a href="#">JS Encryption and decryption</a></li>-->
+                    <!--<li><a href="#">Send HTTP request</a></li>&ndash;&gt;-->
+                    <!--</ul>-->
+
+                    <!--</li>-->
+
+
+                </ul>
+                <form id="form1" name="form1" method="get" class="navbar-form navbar-right my-form1"
+                      action="/isearch" role="search">
+                    <div class="form-group">
+                        <span class="glyphicon glyphicon-search my-glsearch" id="submit_search"></span>
+                        <input type="search" id="search" name="search" class="form-control my-form1-control"
+                               placeholder="搜索…" value="" required="required" name="s">
+                    </div>
+                </form>
+
+                <!--<form id="searchform" action="/search" method="get">-->
+                <!--<div class="input-group">-->
+                <!--<input type="search" class="form-control" placeholder="搜索…" required="required" name="s">-->
+                <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-default" type="submit"><i class="fa fa-search"-->
+                <!--aria-hidden="true"></i></button>-->
+                <!--</span></div>-->
+                <!--</form>-->
+            </div>
+        </div>
+    </nav>
+</header>

@@ -42,16 +42,16 @@ public class BlogController {
 
         //
         model.addAttribute("pageModel", blogFacade.pageQuery(1, siteConfigService.pageSize()));
-        model.addAttribute("catalog", "java");
-        model.addAttribute("page", 1);
-        model.addAttribute("isSearch",false);
+        model.addAttribute("icatalog", "all");   // 分类
+        model.addAttribute("page", 1);          // 当前页数
+        model.addAttribute("isSearch",false);   // 不是搜索
         return "indexform";
     }
 
     @RequestMapping("/isearch")
     public String isearch(@RequestParam("s") String s, @RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
         model.addAttribute("pageModel", blogFacade.search(page, siteConfigService.pageSize(), s));
-        model.addAttribute("catalog", "all");
+        model.addAttribute("icatalog", "all");
         model.addAttribute("isSearch",true);
         model.addAttribute("page", page);
         model.addAttribute("s",s);
@@ -61,7 +61,10 @@ public class BlogController {
     @GetMapping("/iblog/icatalog/{catalog}")
     public String icatalog(@PathVariable("catalog") String catalog, @RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
         model.addAttribute("pageModel", blogFacade.queryByCatalog(page, siteConfigService.pageSize(), catalog));
-        model.addAttribute("catalog", catalog);
+        model.addAttribute("icatalog", catalog);
+
+        System.out.println("--------------icatalog url match:" + catalog);
+
         model.addAttribute("page", page);
         model.addAttribute("isSearch",false);
         return "indexform";

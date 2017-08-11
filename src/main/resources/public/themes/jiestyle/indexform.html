@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
@@ -11,80 +10,15 @@
     <meta name="csrf-param" content="_csrf">
     <meta name="csrf-token" content="dm1aek1SaUwAFxIxDhMheR86Iw8/Nix1LgwvEjhkPHgkPRMLAiBcBQ==">
     <title>首页</title>
-    <meta name="keywords" content="form1,FORM1,文档整理,Mydocument"/>
+    <meta name="keywords" content="51heshui,xiexx,文档整理,Mydocument"/>
     <meta name="description" content=""/>
-    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" th:href="@{/themes/jiestyle/css/bootstrap.min.css}"/>
-    <link rel="stylesheet" th:href="@{/themes/jiestyle/css/index_style.css}"/>
+
+    <div th:replace="ihead"></div>
+
 </head>
 <body>
 
-
-<header class="headers">
-    <div class="container-fluid form1-fluid">
-        <div class="row my-row">
-            <div class="col-md-4">
-                <a href="/indexform"><img th:src="@{/themes/jiestyle/images/logo.png}" width="160" height="43"
-                                          alt="mainlogo"/></a>
-            </div>
-
-            <div class="col-md-8 progress-eve">
-                和你在一起
-                <!--Make a little <a href="http://form1.cn/style-html5-31.html">progress</a> every day-->
-            </div>
-        </div>
-    </div>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse my-collapse">
-                <ul class="nav navbar-nav my-nav">
-                    <li class="active"><a href="/indexform">Home</a></li>
-                    <!--<li><a href="/linux.html">Spring</a></li>-->
-                    <!--<li><a href="/database.html">Java</a></li>-->
-                    <li class="cat-item cat-item-20" th:each="catalog:${catalogs}">
-                        <a th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog.id})}"
-                           th:text="${catalog.label}">分类</a>
-                    </li>
-                    <!--<li id="dropdown">-->
-
-                    <!--<a href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"-->
-                    <!--id="backcolor">-->
-                    <!--Tools <span class="caret"></span>-->
-                    <!--</a>-->
-                    <!--<ul class="dropdown-menu">-->
-                    <!--<li><a href="/tools-json-format.html">JSON format</a></li>-->
-                    <!--<li><a href="/tools-unix-format.html">Unix time format</a></li>-->
-                    <!--<li><a href="/tools-md5-encrypt.html">MD5 encrypt</a></li>-->
-                    <!--<li><a href="/tools-url-encoding.html">URL encoding</a></li>-->
-                    <!--&lt;!&ndash;<li><a href="#">JS Encryption and decryption</a></li>-->
-                    <!--<li><a href="#">Send HTTP request</a></li>&ndash;&gt;-->
-                    <!--</ul>-->
-
-                    <!--</li>-->
-
-
-                </ul>
-                <form id="form1" name="form1" method="get" class="navbar-form navbar-right my-form1"
-                      action="/isearch" role="search">
-                    <div class="form-group">
-                        <span class="glyphicon glyphicon-search my-glsearch" id="submit_search"></span>
-                        <input type="text" id="search" name="search" class="form-control my-form1-control"
-                               placeholder="搜索…" value="">
-                    </div>
-                </form>
-
-                <!--<form id="searchform" action="/search" method="get">-->
-                <!--<div class="input-group">-->
-                <!--<input type="search" class="form-control" placeholder="搜索…" required="required" name="s">-->
-                <!--<span class="input-group-btn">-->
-                <!--<button class="btn btn-default" type="submit"><i class="fa fa-search"-->
-                <!--aria-hidden="true"></i></button>-->
-                <!--</span></div>-->
-                <!--</form>-->
-            </div>
-        </div>
-    </nav>
-</header>
+<div th:replace="iheader"></div>
 
 <section class="section">
 
@@ -99,6 +33,7 @@
 
                     <iframe src="http://www.jq22.com/demo/TheMatrix201702072353/" frameborder="0" scrolling="no"
                             width="720" height="320"></iframe>
+
 
                     <!--
                     HTML5动画：/public/html5/html5-canvas-particle-effect/index.html
@@ -121,9 +56,7 @@
                     <a th:href="@{${item.link}}" th:utext="${item.title}">标题</a>
                 </h2>
                 <div class="box-excerpt">
-
                     <a th:href="@{${item.link}}" th:utext="${item.summary}">文本内容</a>
-
                 </div>
 
                 <div class="box-twig">
@@ -184,29 +117,32 @@
             <!--</div>-->
 
             <!--Bootstrap 分页与标签-->
-            <div class="pageno">
-                <ul class="pagination">
-                    <li class="prev disabled"><span>Previous</span></li>
-                    <li class="active"><a href="#" data-page="0">1</a></li>
-                    <li><a href="#" data-page="1">2</a></li>
-                    <li><a href="#" data-page="2">3</a></li>
-                    <li><a href="#" data-page="3">4</a></li>
-                    <li><a href="#" data-page="4">5</a></li>
-                    <li class="next"><a href="#" data-page="1">Next</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="pagebar"
-                 style="color:white;line-height: 50px;cursor: pointer;background-color: #5bc0eb;text-align: center;"
+            <!--<div class="pageno">-->
+                <!--<ul class="pagination">-->
+                    <!--<li class="prev disabled"><span>Previous</span></li>-->
+                    <!--<li class="active"><a href="#" data-page="0">1</a></li>-->
+                    <!--<li><a href="#" data-page="1">2</a></li>-->
+                    <!--<li><a href="#" data-page="2">3</a></li>-->
+                    <!--<li><a href="#" data-page="3">4</a></li>-->
+                    <!--<li><a href="#" data-page="4">5</a></li>-->
+                    <!--<li class="next"><a href="#" data-page="1">Next</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <div class="pageno"
                  th:if="${(not #lists.isEmpty(pageModel.list))}">
-                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (page &gt 1)}"
-                   th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page-1})}">上一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${not isSearch and (pageModel.hasNext)}"
-                   th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page+1})}">下一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (pageModel.hasNext)} "
-                   th:href="@{/isearch(s=${s},page=${page+1})}">下一页</a>
-                <a id="pagelink" style="display: block;color:white;" th:if="${isSearch and (page &gt 1)} "
-                   th:href="@{/isearch(s=${s},page=${page-1})}">上一页</a>
+
+                <ul class="pagination">
+                    <li><a  th:if="${not isSearch and (page &gt 1)}"
+                           th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page-1})}">上一页</a></li>
+                    <li><a  th:if="${not isSearch and (pageModel.hasNext)}"
+                           th:href="@{/iblog/icatalog/{catalog}(catalog=${catalog},page=${page+1})}">下一页</a>
+                    </li>
+                    <li><a  th:if="${isSearch and (pageModel.hasNext)} "
+                           th:href="@{/isearch(s=${s},page=${page+1})}">Next</a></li>
+                    <li><a  th:if="${isSearch and (page &gt 1)} "
+                           th:href="@{/isearch(s=${s},page=${page-1})}">Previous</a></li>
+                </ul>
             </div>
         </div>
 
@@ -238,61 +174,7 @@
     </div>
 </section>
 
-<footer class="footers">
-    <div class="row">
-        <div class="col-md-6">
-            Copyright © 2017 by xiexx <a href="http://51heshui.com" target="_blank">form1.cn</a> · All Rights Reserved
-        </div>
-        <div class="col-md-6 my-email">
-            Email: <a href="mailto:2265443885@qq.com">2265443885@qq.com</a>
-        </div>
-    </div>
-</footer>
-
-<!-- Modal 冗余Modal... -->
-<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h5 class="modal-title" id="myModalLabel">System message</h5>
-            </div>
-            <div class="modal-body text-danger">Please enter keyword!</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 冗余Modal... -->
-<div class="modal fade bs-example-modal-sm" id="jsonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h5 class="modal-title" id="myModalLabel">System message</h5>
-            </div>
-            <div class="modal-body text-danger">JSON syntax error!</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--<script src="/public/js/jquery-1.9.1.min.js"></script>-->
-<script th:src="@{/themes/jiestyle/js/jquery.min.js}"></script>
-<!--<script src="/public/bootstrap/js/bootstrap.js"></script>-->
-<script th:src="@{/themes/jiestyle/js/bootstrap.min.js}"></script>
-
-<!--<script src="./index_script.js"></script>-->
-<script type="text/javascript" th:src="@{/themes/jiestyle/js/index_script.js}"></script>
+<div th:replace="ifooter"></div>
 
 </body>
 </html>

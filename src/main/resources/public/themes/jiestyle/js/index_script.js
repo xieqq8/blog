@@ -36,11 +36,11 @@ $(function(){
     /*鼠标放上 菜单下拉*/
     $('#dropdown').mouseover(function() {
         $(this).addClass('open');
-        $("#backcolor").css({"background-color":"#a63f16"});
+        $("#backcolor").css({"background-color":"#e4562b"});
     }).mouseout(function() {
         $(this).removeClass('open');
         if($(this).attr("class") != 'active') {
-            $("#backcolor").css({"background-color": "#206494"});
+            $("#backcolor").css({"background-color": "#df2065"});
         }
     });
 
