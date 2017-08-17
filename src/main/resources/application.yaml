@@ -17,6 +17,8 @@ management:
     enabled: false
 
 spring:
+  jmx:
+    default-domain: xxxblog
   application:
     name: xiexx-blog
   datasource:
