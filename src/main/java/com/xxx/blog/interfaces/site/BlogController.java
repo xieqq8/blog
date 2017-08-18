@@ -36,7 +36,7 @@ public class BlogController {
      * @param model
      * @return
      */
-    @GetMapping("/indexform")
+    @GetMapping(value = {"/", "/blog", "/index.html", "/index"})
     public String indexform(Model model){
         // 总条数，算分页
 
@@ -86,7 +86,7 @@ public class BlogController {
     }
     //form1 stye end///////////////////////////////
 
-    @GetMapping(value = {"/", "/blog", "/index.html"})
+    @GetMapping("/indexform") // 默认路径调整
     public String index(Model model) {
         // 分页
         model.addAttribute("pageModel", blogFacade.pageQuery(1, siteConfigService.pageSize()));

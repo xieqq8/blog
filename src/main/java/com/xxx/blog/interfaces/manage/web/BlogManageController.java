@@ -49,7 +49,6 @@ public class BlogManageController {
         return RestResponse.ok(blogFacade.pageQuery(page,20));
     }
 
-
     @PostMapping("/es_index/update")
     public RestResponse updateEsIndex(){
      blogFacade.updateIndex();
