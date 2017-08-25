@@ -32,7 +32,7 @@ public class BlogController {
 
     //form1 stye start///////////////////////////////
     /**
-     * form1
+     * 首页
      * @param model
      * @return
      */
@@ -48,6 +48,13 @@ public class BlogController {
         return "indexform";
     }
 
+    /**
+     * 查找
+     * @param s
+     * @param page
+     * @param model
+     * @return
+     */
     @RequestMapping("/isearch")
     public String isearch(@RequestParam("s") String s, @RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
         model.addAttribute("pageModel", blogFacade.search(page, siteConfigService.pageSize(), s));
@@ -58,6 +65,13 @@ public class BlogController {
         return "indexform";
     }
 
+    /**
+     * 分类显示
+     * @param catalog
+     * @param page
+     * @param model
+     * @return
+     */
     @GetMapping("/iblog/icatalog/{catalog}")
     public String icatalog(@PathVariable("catalog") String catalog, @RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
         model.addAttribute("pageModel", blogFacade.queryByCatalog(page, siteConfigService.pageSize(), catalog));
@@ -70,6 +84,14 @@ public class BlogController {
         return "indexform";
     }
 
+    /**
+     * 博文详情
+     * @param id
+     * @param model
+     * @param viewd
+     * @param response
+     * @return
+     */
     @GetMapping("/iblog/{id}")
     public String iget(@PathVariable("id") String id, Model model, @CookieValue(name = "viewd", required = false) String viewd, HttpServletResponse response) {
         BlogDetailDto blog = blogFacade.getBlog(id);
