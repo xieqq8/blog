@@ -2,6 +2,7 @@ package com.xxx.blog.interfaces.api;
 
 import com.xxx.blog.interfaces.manage.facade.BlogFacade;
 import com.xxx.blog.interfaces.manage.facade.command.WriteBlogCommand;
+import com.xxx.blog.interfaces.site.facade.SiteBlogFacade;
 import com.xxx.toolbox.model.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -24,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 public class ApiBlogController {
 
     @Autowired
-    private BlogFacade blogFacade;
+    private SiteBlogFacade blogFacade;
 
 
 //    @PostMapping("/add")
@@ -58,8 +59,13 @@ public class ApiBlogController {
     @GetMapping()
     public RestResponse get(@RequestParam(value = "page",required = false,defaultValue = "1") int page){
         return RestResponse.ok(blogFacade.pageQuery(page,20));
-    }
 
+//        blogFacade.queryByCatalog(page, siteConfigService.pageSize(), catalog)
+    }
+    @GetMapping("/{catalog}")
+    public RestResponse get(@PathVariable("catalog") String catalog, @RequestParam(value = "page", required = false, defaultValue = "1") int page){
+        return RestResponse.ok(blogFacade.queryByCatalog(page, 5, catalog));
+    }
 //    @PostMapping("/es_index/update")
 //    public RestResponse updateEsIndex(){
 //     blogFacade.updateIndex();

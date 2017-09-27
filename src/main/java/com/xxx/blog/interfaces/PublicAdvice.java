@@ -54,7 +54,7 @@ public class PublicAdvice {
 
     @ModelAttribute
     public void addCommonModel(Model model, HttpServletRequest request) {
-        model.addAttribute("navs", navService.listWithTree(false));
+//        model.addAttribute("navs", navService.listWithTree(false)); // 左侧的导航，不要
         model.addAttribute("catalogs", catalogService.listWithTree(false));
         model.addAttribute("siteconfig",siteConfigService.siteConfig());
     }

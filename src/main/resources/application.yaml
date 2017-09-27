@@ -3,4 +3,4 @@
 #    prod 生产环境：是值正式提供对外服务的，一般会关掉错误报告，打开错误日志。
 spring:
   profiles:
-    active: dev
+    active: prod
