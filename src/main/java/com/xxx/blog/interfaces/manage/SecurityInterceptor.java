@@ -19,7 +19,8 @@ public class SecurityInterceptor implements HandlerInterceptor{
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String remote=request.getRemoteHost();
+//        String remoterequest.getRemoteHost();
+        String remote = request.getRemoteAddr();
         if(remote.equals("0:0:0:0:0:0:0:1") || CollectionUtils.isEmpty(allowRemoteHosts) || allowRemoteHosts.contains(remote)){
              return true;
         }
