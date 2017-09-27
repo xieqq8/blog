@@ -110,12 +110,12 @@ public class BlogController {
 
     @GetMapping("/indexform") // 默认路径调整
     public String index(Model model) {
-        // 分页
+        // 总条数，算分页
         model.addAttribute("pageModel", blogFacade.pageQuery(1, siteConfigService.pageSize()));
-        model.addAttribute("catalog", "java");
+        model.addAttribute("catalog", "all");
         model.addAttribute("page", 1);
         model.addAttribute("isSearch",false);
-        return "catalog";
+        return "indexform";
     }
 
     @GetMapping("/blog/{id}")
