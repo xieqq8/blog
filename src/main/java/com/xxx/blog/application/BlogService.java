@@ -74,10 +74,9 @@ public class BlogService {
         return blogQueryRepositry.queryByKeyword(page, size, keywords);
     }
 
-
-    /***
-     * 获取blog相似的blogs
-     * @param blog
+    /**
+     *
+     * @param kw
      * @return
      */
     public List<Blog> getSimilarBlogs(String kw){
@@ -87,7 +86,6 @@ public class BlogService {
         }
         return pageModel.getList();
     }
-
 
     //更新索引
     public void updateIndex(){

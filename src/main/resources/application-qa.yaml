@@ -51,7 +51,6 @@ spring:
 
   thymeleaf:
       cache: false
-
       prefix: classpath:/public/themes/jiestyle/
       mode: LEGACYHTML5
 

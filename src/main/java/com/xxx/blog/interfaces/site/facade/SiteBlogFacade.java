@@ -52,7 +52,7 @@ public class SiteBlogFacade {
 
     private SimpleBlog toSimpleBlog(Blog blog) {
         SimpleBlog dto = new SimpleBlog();
-       dto.setPublishTime(blog.getPublishTime());
+        dto.setPublishTime(blog.getPublishTime());
         dto.setCatalogDisplay(catalogService.getCatalog(blog.getCatalog()).getLabel());
         dto.setLink(blog.getLink());
         dto.setSummary(blog.getDisplay());

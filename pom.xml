@@ -44,21 +44,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<!-- 移除嵌入式tomcat插件 -->
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>org.springframework.boot</groupId>-->
+					<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		</dependency>
 
 		<!--因为本地启动还是需要使用到tomcat,因此还需要加入romcat的引用-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-			<!--provided的意思，就是说这个jar包，在这个项目可能的运行环境里，都会提 供了的，所以就不用打包到war包里面了-->
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+			<!--<scope>provided</scope>-->
+			<!--&lt;!&ndash;provided的意思，就是说这个jar包，在这个项目可能的运行环境里，都会提 供了的，所以就不用打包到war包里面了&ndash;&gt;-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -266,6 +266,20 @@
 			<groupId>net.sourceforge.nekohtml</groupId>
 			<artifactId>nekohtml</artifactId>
 			<version>1.9.22</version>
+		</dependency>
+
+		<!-- 2017-09-29 add  其实只要添加这一个，其他的依赖jar都会被下载下来
+			之前没有这个我的日志也打出来了 spring boot 自带 ？ https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<!-- 2017-09-29 可以不加 https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.2.3</version>
 		</dependency>
 
 		<dependency>
